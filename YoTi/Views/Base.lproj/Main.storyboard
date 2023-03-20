@@ -32,7 +32,14 @@
                             <outlet property="delegate" destination="igI-gI-9S7" id="d1i-UD-8E2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="YoTi" id="uFl-Wu-djA"/>
+                    <navigationItem key="navigationItem" title="YoTi" id="uFl-Wu-djA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ps8-s8-quW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="igI-gI-9S7" id="TCP-jE-ydb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DNY-gz-kdC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
