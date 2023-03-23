@@ -55,6 +55,8 @@ class TodoListViewController: UITableViewController {
             
             self.itemArray.append(textField.text ?? "New Item")
             
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            
             self.tableView.reloadData()
         }
         
