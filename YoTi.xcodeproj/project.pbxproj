@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		194EC46129D2FADF0075C0AC /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194EC46029D2FADF0075C0AC /* Item.swift */; };
 		199C6AAB29C23F7300E788A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C6AAA29C23F7300E788A7 /* AppDelegate.swift */; };
 		199C6AAD29C23F7300E788A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */; };
 		199C6AAF29C23F7300E788A7 /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C6AAE29C23F7300E788A7 /* TodoListViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		194EC46029D2FADF0075C0AC /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		199C6AA729C23F7300E788A7 /* YoTi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoTi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199C6AAA29C23F7300E788A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 		19AFD26E29C37675000823F6 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				194EC46029D2FADF0075C0AC /* Item.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -170,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194EC46129D2FADF0075C0AC /* Item.swift in Sources */,
 				199C6AAF29C23F7300E788A7 /* TodoListViewController.swift in Sources */,
 				199C6AAB29C23F7300E788A7 /* AppDelegate.swift in Sources */,
 				199C6AAD29C23F7300E788A7 /* SceneDelegate.swift in Sources */,
