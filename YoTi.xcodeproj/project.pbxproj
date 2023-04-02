@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19227D2929D8AB86000ACCE8 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19227D2829D8AB86000ACCE8 /* CategoryViewController.swift */; };
 		19426E9B29D44C5900BF013D /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 19426E9929D44C5900BF013D /* DataModel.xcdatamodeld */; };
 		199C6AAB29C23F7300E788A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C6AAA29C23F7300E788A7 /* AppDelegate.swift */; };
 		199C6AAD29C23F7300E788A7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */; };
@@ -17,7 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		19426E9A29D44C5900BF013D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		19227D2829D8AB86000ACCE8 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		19426E9A29D44C5900BF013D /* DataModel.xcdatamodel */ = {isa = PBXFileReference; explicitFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
 		199C6AA729C23F7300E788A7 /* YoTi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YoTi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199C6AAA29C23F7300E788A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19227D2729D8AB65000ACCE8 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
 		199C6A9E29C23F7300E788A7 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +73,7 @@
 				19AFD26C29C3764F000823F6 /* Views */,
 				19AFD26B29C3763D000823F6 /* Controllers */,
 				199C6AAA29C23F7300E788A7 /* AppDelegate.swift */,
+				19227D2729D8AB65000ACCE8 /* Product */,
 				199C6AB829C23F7400E788A7 /* Info.plist */,
 			);
 			path = YoTi;
@@ -71,8 +82,8 @@
 		19AFD26B29C3763D000823F6 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				199C6AAC29C23F7300E788A7 /* SceneDelegate.swift */,
 				199C6AAE29C23F7300E788A7 /* TodoListViewController.swift */,
+				19227D2829D8AB86000ACCE8 /* CategoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -173,6 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19227D2929D8AB86000ACCE8 /* CategoryViewController.swift in Sources */,
 				19426E9B29D44C5900BF013D /* DataModel.xcdatamodeld in Sources */,
 				199C6AAF29C23F7300E788A7 /* TodoListViewController.swift in Sources */,
 				199C6AAB29C23F7300E788A7 /* AppDelegate.swift in Sources */,
