@@ -12,7 +12,7 @@
         <!--Category-->
         <scene sceneID="VLN-Vz-ca0">
             <objects>
-                <tableViewController id="Poh-zw-pcB" customClass="CategoryViewController" sceneMemberID="viewController">
+                <tableViewController id="Poh-zw-pcB" customClass="CategoryViewController" customModule="YoTi" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="GQj-8R-h9K">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -36,7 +36,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HTh-Wk-qp7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="addButtonPressed:" destination="Poh-zw-pcB" id="37l-gA-wCc"/>
+                                <action selector="addCategoryButtonPressed:" destination="Poh-zw-pcB" id="kgI-CG-hP7"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

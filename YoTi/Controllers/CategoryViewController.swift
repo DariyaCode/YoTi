@@ -22,28 +22,27 @@ class CategoryViewController: UITableViewController {
     }
     
     //MARK: - TableView Datasource Methods
-    func saveCategory() {
-        //Im saving the list of items to (NSObject) -> context and those data into my array
-        do {
-            try context.save()
-        } catch {
-            print("Error saving context, \(error)")
-        }
-        self.tableView.reloadData()
+    
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //return the count of item bucause i need follow the number, so the reason is to now which one item need to be marked
+        return categories.count
     }
-    func loadCategory(with request: NSFetchRequest<Category> = Category.fetchRequest()) {
-        //Im loading saved items to (NSObject) -> context and requesting this data for forward it to my table, so because of this it will be visable for user
-        do{
-            categories = try context.fetch(request)
-        } catch{
-            print("Error fatching data from context, \(error)")
-        }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCategoryCell", for: indexPath)
+        let category = categories[indexPath.row]
+        
+        //
+        cell.textLabel?.text = categories[indexPath.row].name
+        return cell
     }
     
     
     //MARK: - Add New Categories
     
-    @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+    @IBAction func addCategoryButtonPressed(_ sender: UIBarButtonItem) {
         var textField = UITextField()
         //creating the alert via text field for name of new item
         let alert = UIAlertController(title: "Add new YoTi Category", message: "", preferredStyle: .alert)
@@ -57,12 +56,12 @@ class CategoryViewController: UITableViewController {
         }
         //
         
-        alert.addTextField { (alertTextField) in
-            alertTextField.placeholder = "Create new category"
-            textField = alertTextField
-        }
-        
         alert.addAction(action)
+        
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "Create new category"
+        }
         
         present(alert, animated: true, completion: nil)
     }
@@ -70,25 +69,25 @@ class CategoryViewController: UITableViewController {
     
     //MARK: - Data Manipulation Methods
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return the count of item bucause i need follow the number, so the reason is to now which one item need to be marked
-        return categories.count
+    func saveCategory() {
+        //Im saving the list of items to (NSObject) -> context and those data into my array
+        do {
+            try context.save()
+        } catch {
+            print("Error saving context, \(error)")
+        }
+        tableView.reloadData()
+    }
+    func loadCategory() {
+        //Im loading saved items to (NSObject) -> context and requesting this data for forward it to my table, so because of this it will be visable for user
+        let request : NSFetchRequest<Category> = Category.fetchRequest()
+        do{
+            categories = try context.fetch(request)
+        } catch{
+            print("Error fatching data from context, \(error)")
+        }
+        tableView.reloadData()
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCategoryCell", for: indexPath)
-        let category = categories[indexPath.row]
-        
-        //
-        cell.textLabel?.text = category.name
-        return cell
-    }
-    
-    
-    //MARK: - TableView Delegate Methods
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        saveCategory()
-    }
+
 }
