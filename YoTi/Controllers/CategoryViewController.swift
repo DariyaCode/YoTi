@@ -30,11 +30,10 @@ class CategoryViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //
+        //initialaze the screen & creating the safe plase for saving the data of every category
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoCategoryCell", for: indexPath)
         let category = categories[indexPath.row]
-        
-        //
+        //saving the labels of categories in list of them
         cell.textLabel?.text = categories[indexPath.row].name
         return cell
     }
