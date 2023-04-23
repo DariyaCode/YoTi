@@ -37,6 +37,18 @@ class CategoryViewController: UITableViewController {
         cell.textLabel?.text = categories[indexPath.row].name
         return cell
     }
+    //MARK: - TableView Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //delegate methods
+        performSegue(withIdentifier: "goToItems", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
+        
+        //destination
+    }
     
     
     //MARK: - Add New Categories
