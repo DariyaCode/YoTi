@@ -102,13 +102,27 @@ class TodoListViewController: UITableViewController {
         }
         self.tableView.reloadData()
     }
-    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
+    
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest(), predicate: NSPredicate? = nil) {
         //Im loading saved items to (NSObject) -> context and requesting this data for forward it to my table, so because of this it will be visable for user
+        let categoryPredicate = NSPredicate(format: "parentcategory.name MATCHES %@", selectedCategory!.name!)
+        
+        if let additionalPredicate = predicate {
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, additionalPredicate])
+        } else {
+            request.predicate = categoryPredicate
+        }
+        
+//        let compoundPredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [categoryPredicate, predicate])
+//        request.predicate = compoundPredicate
+        
         do{
             itemArray = try context.fetch(request)
         } catch{
             print("Error fatching data from context, \(error)")
         }
+        
+        tableView.reloadData()
     }
 }
 
@@ -119,18 +133,20 @@ extension TodoListViewController: UISearchBarDelegate {
     //function where search bar is creating & it giving the results of searching. List of items, that corresponds to the search condition
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         //after creating the fetching request, assign to the variable searchText the search bar's text and adding the format of predicate what i need of my search condition(searching elements by them titles)
-        if let searchText = searchBar.text {
-            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
-        }
+//
+//        if let searchText = searchBar.text {
+//            request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchText)
+//        }
+        let predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
         
         //sorting the items by format of them titles & loading the searching items list also reload the table, so to update the data of list
         
         request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
         
-        loadItems(with: request)
-        tableView.reloadData()
+        loadItems(with: request, predicate: predicate)
     }
     
     //function that return the ordinary list of items, when the search bar's text is empty
