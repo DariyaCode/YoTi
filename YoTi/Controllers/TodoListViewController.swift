@@ -38,11 +38,11 @@ class TodoListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //
+        //input the value into cell and item
         let cell = tableView.dequeueReusableCell(withIdentifier: "TodoItemCell", for: indexPath)
         let item = itemArray[indexPath.row]
         
-        //
+        //output the item's title and checkmark.
         cell.textLabel?.text = item.title
         cell.accessoryType = item.done ? .checkmark : .none
         
@@ -70,7 +70,7 @@ class TodoListViewController: UITableViewController {
         //creating the alert via text field for name of new item
         let alert = UIAlertController(title: "Add new YoTi Item", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add Item", style: .default) { (action) in
-            //
+            //initialaze new variables for selecting the item into list
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
             newItem.done = false
@@ -79,7 +79,7 @@ class TodoListViewController: UITableViewController {
             self.itemArray.append(newItem)
             self.saveItems()
         }
-        //
+        //pop up the alert field where u can write the title of new element in list
         
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Create new item"
