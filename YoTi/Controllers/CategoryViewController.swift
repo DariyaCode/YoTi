@@ -17,7 +17,7 @@ class CategoryViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        //loading the data of my categories
+        //loading the data of my categories for list
         loadCategory()
     }
     
@@ -40,13 +40,13 @@ class CategoryViewController: UITableViewController {
     //MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //delegate methods
+        //delegate methods, send the direction from category to items
         performSegue(withIdentifier: "goToItems", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destinationVC = segue.destination as! TodoListViewController
-        
+        //We must be sure of the correctness of the choice of a particular category
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedCategory = categories[indexPath.row]
         }
@@ -60,14 +60,14 @@ class CategoryViewController: UITableViewController {
         //creating the alert via text field for name of new item
         let alert = UIAlertController(title: "Add new YoTi Category", message: "", preferredStyle: .alert)
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
-            //
+            //initialize the categories for list of items
             let newCategory = Category(context: self.context)
             newCategory.name = textField.text!
-            
+                //appending the new for list data for category
             self.categories.append(newCategory)
             self.saveCategory()
         }
-        //
+        //Now we see the text field were need to name the element category of the list
         
         alert.addAction(action)
         
