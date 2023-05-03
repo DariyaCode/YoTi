@@ -15,6 +15,7 @@
 		199C6AB229C23F7300E788A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199C6AB029C23F7300E788A7 /* Main.storyboard */; };
 		199C6AB429C23F7400E788A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 199C6AB329C23F7400E788A7 /* Assets.xcassets */; };
 		199C6AB729C23F7400E788A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199C6AB529C23F7400E788A7 /* LaunchScreen.storyboard */; };
+		19E4673F2A02D403002AF51D /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E4673E2A02D403002AF51D /* Data.swift */; };
 		AFD318BA586E3942E5E29958 /* Pods_YoTi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44EAD4E861C5E5E744E11686 /* Pods_YoTi.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,6 +31,7 @@
 		199C6AB329C23F7400E788A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		199C6AB629C23F7400E788A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		199C6AB829C23F7400E788A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19E4673E2A02D403002AF51D /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		41696227A7B0480EA54E5605 /* Pods-YoTi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YoTi.debug.xcconfig"; path = "Target Support Files/Pods-YoTi/Pods-YoTi.debug.xcconfig"; sourceTree = "<group>"; };
 		44EAD4E861C5E5E744E11686 /* Pods_YoTi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YoTi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				19426E9929D44C5900BF013D /* DataModel.xcdatamodeld */,
+				19E4673E2A02D403002AF51D /* Data.swift */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -134,7 +137,6 @@
 				41696227A7B0480EA54E5605 /* Pods-YoTi.debug.xcconfig */,
 				0FDE3629BB60866A68C53226 /* Pods-YoTi.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -254,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19227D2929D8AB86000ACCE8 /* CategoryViewController.swift in Sources */,
+				19E4673F2A02D403002AF51D /* Data.swift in Sources */,
 				19426E9B29D44C5900BF013D /* DataModel.xcdatamodeld in Sources */,
 				199C6AAF29C23F7300E788A7 /* TodoListViewController.swift in Sources */,
 				199C6AAB29C23F7300E788A7 /* AppDelegate.swift in Sources */,

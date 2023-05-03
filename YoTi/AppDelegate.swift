@@ -7,12 +7,29 @@
 
 import UIKit
 import CoreData
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        print(Realm.Configuration.defaultConfiguration.fileURL)
+        
+        let data = Data()
+        data.name = "Dariya"
+        data.age = 18
+        
+        do{
+            let realm = try Realm()
+            try realm.write{
+                realm.add(data)
+            }
+        } catch {
+            print("Error installation new Realm, \(error)")
+        }
+        
         
         return true
     }
